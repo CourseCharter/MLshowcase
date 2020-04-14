@@ -18,7 +18,7 @@ data['relatives'] = data.apply (lambda row: int((row['sibsp'] + row['parch']) > 
 #see relations on various charts
 import seaborn as sns
 import matplotlib.pyplot as plt
-from pathlib import path
+from pathlib import PureWindowsPath
 
 fig, axs = plt.subplots(ncols=5, figsize=(30,5))
 sns.violinplot(x="survived", y="age", hue="sex", data=data, ax=axs[0])
@@ -27,8 +27,8 @@ sns.pointplot(x="parch", y="survived", hue="sex", data=data, ax=axs[2])
 sns.pointplot(x="pclass", y="survived", hue="sex", data=data, ax=axs[3])
 sns.violinplot(x="survived", y="fare", hue="sex", data=data, ax=axs[4])
 
-parent = path.parent
-fig.savefig(parent + 'static/titanic/titanic_test_model.png')
+projects = str(PureWindowsPath('C:/Users/user/projects/mlshowcase'))
+fig.savefig(projects + '\static\\titanic\\titanic_model')
 
 #look at each features' correlation to survival
 corr_table = data.corr().abs()[["survived"]]
