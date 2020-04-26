@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'titanic',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

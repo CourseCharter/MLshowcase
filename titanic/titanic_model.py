@@ -68,5 +68,11 @@ from sklearn import metrics
 y_pred = model.predict_classes(X_test)
 nn_results = metrics.accuracy_score(y_test, y_pred)
 
+#pickling
+import pickle
+from sklearn.externals import joblib
+filename= 'titanic_model.pkl'
+joblib.dump(model, filename)
+
 
 
