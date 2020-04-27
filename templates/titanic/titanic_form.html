@@ -44,6 +44,12 @@
               <p>
                The final result is 81% accurate! I have created a form so you can play around with the preditions yourself!
               </p>
+              <br>
+              <form method='POST'>
+                {% csrf_token %}
+                {{ form }}
+                <button type = 'submit'>Submit</button>
+              </form>
             </div>
           </div>
         </div>

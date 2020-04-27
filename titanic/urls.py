@@ -9,4 +9,5 @@ urlpatterns = [
     path('',views.NewTitanicForm,name='titanic'),
     path('api/', include(router.urls)),
     path('status/', views.Titanic_Guess_View),
+    path('test/', views.titanic_page_guess, name='testform')
 ]
