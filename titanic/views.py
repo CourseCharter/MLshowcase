@@ -3,6 +3,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from django.core import serializers
+from django.contrib import messages
 from rest_framework.response import Response
 from rest_framework import status
 from django.http import JsonResponse
@@ -16,6 +17,8 @@ import json
 import numpy as np
 from sklearn import preprocessing
 import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from joblib import load as jload
 
 # Create your views here.
 def NewTitanicForm(request):
@@ -28,17 +31,14 @@ class Titanic_Guess_View(viewsets.ModelViewSet):
 #@api_view(["POST"])
 def survived(unit):
 	try:
-		mdl=joblib.load("/Users/user/projects/mlshowcase/titanic/titanic_model.pkl")
+		mdl=jload("/Users/user/projects/mlshowcase/titanic/titanic_model.pkl")
 		#mydata=pd.read_excel('/Users/sahityasehgal/Documents/Coding/bankloan/test.xlsx')
-		mydata=unit.data
-		unit=np.array(list(mydata.values()))
-		unit=unit.reshape(1,-1)
-		X=unit
-		y_pred=mdl.predict(X)
-		y_pred=(y_pred>0.58)
-		newdf=pd.DataFrame(y_pred, columns=['Survived'])
-		newdf=newdf.replace({True:'Survived', False:'Perished'})
-		return ('Your Status is {}'.format(newdf))
+		sc=StandardScaler()
+		X=sc.fit_transform(unit)
+		y_pred=mdl.predict_classes(X)
+		#newdf=pd.DataFrame(y_pred, columns=['Survived'])
+		#newdf=newdf.replace({1:'Survived', 0:'Perished'})
+		return (str(y_pred))	
 	except ValueError as e:
 		return Response(e.args[0], status.HTTP_400_BAD_REQUEST)
 
@@ -47,14 +47,17 @@ def titanic_page_guess(request):
 	if request.method =='POST':
 		form=TitanicForm(request.POST)
 		if form.is_valid():
-			Pclass=form.cleaned_data['passengerclass']
 			sex=form.cleaned_data['sex']
+			pclass=form.cleaned_data['pclass']
 			age=form.cleaned_data['age']
-			relatives=form.cleaned_data['relativesonboard']
-			price=form.cleaned_data['ticketprice']
+			relatives=form.cleaned_data['relatives']
+			fare=form.cleaned_data['fare']
 			myDict = (request.POST).dict()
 			df=pd.DataFrame(myDict, index=[0])
-			print(survived(df))
+			df=df.drop(['csrfmiddlewaretoken'], axis=1)
+			answer = survived(df)[0]
+			messages.success(request, 'Your Fate: {}'.format(answer))
+
 
 	form=TitanicForm()
 

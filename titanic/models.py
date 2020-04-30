@@ -11,12 +11,11 @@ class titanic_guess(models.Model):
         SECOND = 2
         THIRD = 3
 
-
-    passengerclass=models.IntegerField(choices=Pclass.choices)
     sex=models.IntegerField(choices=Gender.choices)
+    pclass=models.IntegerField(choices=Pclass.choices)
     age=models.IntegerField(default=0)
-    relativesonboard=models.IntegerField(default=0)
-    ticketprice=models.FloatField(default=0)
+    relatives=models.IntegerField(default=0)
+    fare=models.FloatField(default=0)
 
     def __str__(self):
         return super().__str__()

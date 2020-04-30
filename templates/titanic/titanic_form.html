@@ -23,7 +23,7 @@
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-      <div class="container">
+      <div class="container-fluid">
 
         <div class="row">
           <div class="col-lg-6" data-aos="zoom-in">
@@ -45,15 +45,18 @@
                The final result is 81% accurate! I have created a form so you can play around with the preditions yourself!
               </p>
               <br>
-              <form method='POST'>
-                {% csrf_token %}
-                {{ form }}
-                <button type = 'submit'>Submit</button>
-              </form>
             </div>
           </div>
         </div>
-
+        <div class="row">
+          <div class="col-lg-6" data-aos="zoom-in">
+            <form method='POST'>
+                {% csrf_token %}
+                {{ form | linebreaks}}
+                <button type = 'submit'>Submit</button>
+              </form>
+          </div>          
+        </div>
       </div>
     </section><!-- End About Section -->
 
