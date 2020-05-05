@@ -38,6 +38,7 @@ def survived(unit):
 		y_pred=mdl.predict_classes(X)
 		#newdf=pd.DataFrame(y_pred, columns=['Survived'])
 		#newdf=newdf.replace({1:'Survived', 0:'Perished'})
+		
 		return (str(y_pred))	
 	except ValueError as e:
 		return Response(e.args[0], status.HTTP_400_BAD_REQUEST)
@@ -55,7 +56,7 @@ def titanic_page_guess(request):
 			myDict = (request.POST).dict()
 			df=pd.DataFrame(myDict, index=[0])
 			df=df.drop(['csrfmiddlewaretoken'], axis=1)
-			answer = survived(df)[0]
+			answer = survived(df)
 			messages.success(request, 'Your Fate: {}'.format(answer))
 
 

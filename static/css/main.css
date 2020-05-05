@@ -26,6 +26,11 @@ body {
     font-family: "Raleway", sans-serif;
   }
   
+.jumbotron {
+  background-image: url(../../static/images/HKsunrise.jpg);
+  background-size: cover;
+}
+
   /*--------------------------------------------------------------
   # Back to top button
   --------------------------------------------------------------*/
@@ -348,7 +353,7 @@ body {
   --------------------------------------------------------------*/
   #hero {
     width: 100%;
-    background-image: url("../img/hero-bg.png");
+    background-image: url("");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right top;

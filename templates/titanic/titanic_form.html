@@ -6,7 +6,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero">
 
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
           <div>
@@ -26,10 +26,12 @@
       <div class="container-fluid">
 
         <div class="row">
-          <div class="col-lg-6" data-aos="zoom-in">
+          <div class="container-fluid" data-aos="zoom-in">
             <img src="{% static 'titanic/titanic_model.png' %}" class="img-fluid" alt="">
           </div>
-          <div class="col-lg-6 d-flex flex-column justify-contents-center" data-aos="fade-left">
+        </div>
+        <div class="row">  
+          <div class="container">
             <div class="content pt-4 pt-lg-0">
               <h3>Test Data Results</h3>
               <p class="font-italic">
@@ -37,9 +39,9 @@
                 are able to see the relationships between various features in the data.
               </p>
               <ul>
-                <li><i class="bi bi-check"></i>5 primary features are ultimately used for testing</li>
-                <li><i class="bi bi-check"></i> Over 800 passenger records are tested on</li>
-                <li><i class="bi bi-check"></i> The network uses 3 layers for prediction</li>
+                <li><i class="fa fa-bolt"></i>5 primary features are ultimately used for testing</li>
+                <li><i class="fa fa-bolt"></i> Over 800 passenger records are tested on</li>
+                <li><i class="fa fa-bolt"></i> The network uses 3 layers for prediction</li>
               </ul>
               <p>
                The final result is 81% accurate! I have created a form so you can play around with the preditions yourself!
@@ -48,8 +50,9 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-6" data-aos="zoom-in">
+       
+       <div class="row">
+          <div class="container">
             <form method='POST'>
                 {% csrf_token %}
                 {{ form | linebreaks}}
@@ -59,26 +62,6 @@
         </div>
       </div>
     </section><!-- End About Section -->
-
-<!-- 
-<div class='container'>
-<h1 style='text-align: center'>The Titanic survival prediction model is the very first model everyone does when learning machine learning.</h1>
-<div class="row-mb-3">
-    <div class='col-md-8'>
-        <img src="{% static 'titanic/titanic.jpg' %}" alt="Image not found" style="width:750px;height:500px;align:center;">
-        <div class='row'>
-            <div class='vol-md-6'>text 1</div>
-            <div class='vol-md-6'>text 2</div>
-        </div>
-    </div>
-    <div class='col-md-4'>
-        <img src="{% static 'titanic/titanic_model.png' %}" alt="Image not found" style="width:750px;height:100px;">
-    </div>
-    </div>
-</div>
-</div>
-
--->
 
 
 {% endblock  %}
