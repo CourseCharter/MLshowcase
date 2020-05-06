@@ -62,4 +62,4 @@ def titanic_page_guess(request):
 
 	form=TitanicForm()
 
-	return render(request, 'titanic/testform.html', {'form': form})
+	return render(request, 'titanic/testform.html', {'form': form}) 
