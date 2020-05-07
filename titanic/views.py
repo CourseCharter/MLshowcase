@@ -57,9 +57,21 @@ def titanic_page_guess(request):
 			df=pd.DataFrame(myDict, index=[0])
 			df=df.drop(['csrfmiddlewaretoken'], axis=1)
 			answer = survived(df)
-			messages.success(request, 'Your Fate: {}'.format(answer))
+			messages.success(request, 'Guess Submitted.')
+			#messages.success(request, 'Your Fate: {}'.format(answer))
+			#this is causing a problem for multiple attempts. the guess is being submitted multiple times but the response cannot be rendered multiple times
 
-
+	
 	form=TitanicForm()
 
 	return render(request, 'titanic/testform.html', {'form': form}) 
+
+# Creating a Styler object HTML table from a Dataframe
+def create_HTML_table(dataframe, colum_bar_count):
+    html_table_dataframe = (
+        dataframe.style
+        .set_properties(**{'font-size': '12pt', 'width': '100%', 'font-family': 'Calibri'})
+        .bar(subset=[colum_bar_count], color='lightblue')
+        .render()
+    )
+    return html_table_dataframe

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'titanic',
     'rest_framework',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +135,5 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.FormParser',
     )
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
