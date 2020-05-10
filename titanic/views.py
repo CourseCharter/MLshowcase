@@ -66,7 +66,8 @@ def titanic_page_guess(request):
 			df=pd.DataFrame(myDict, index=[0])
 			df=df.drop(['csrfmiddlewaretoken'], axis=1)
 			answer = survived(df)
-			messages.success(request, 'Guess Submitted.')
+			print(answer)
+			#messages.success(request, 'Guess Submitted.')
 			#messages.success(request, 'Your Fate: {}'.format(answer))
 			#this is causing a problem for multiple attempts. the guess is being submitted multiple times but the response cannot be rendered multiple times
 			titanic_table=create_HTML_table(titanic_df(pd.read_csv('titanic/data.csv')))
@@ -105,3 +106,4 @@ def create_HTML_table(dataframe):
         .render()
     )
     return html_table_dataframe
+
