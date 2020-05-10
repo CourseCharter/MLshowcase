@@ -6,7 +6,7 @@ router = routers.DefaultRouter()
 router.register('titanic', views.Titanic_Guess_View)
 
 urlpatterns = [
-    path('',views.NewTitanicForm,name='titanic'),
+    path('',views.NewTitanicForm.as_view(),name='titanic'),
     path('api/', include(router.urls)),
     path('status/', views.Titanic_Guess_View),
     path('test/', views.titanic_page_guess, name='testform'),

@@ -16,6 +16,7 @@ class titanic_guess(models.Model):
     age=models.IntegerField(default=0)
     relatives=models.IntegerField(default=0)
     fare=models.FloatField(default=0)
+    result=models.IntegerField(default=0)
 
     def __str__(self):
         return super().__str__()

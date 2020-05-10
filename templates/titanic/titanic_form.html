@@ -44,7 +44,7 @@
                 <li><i class="fa fa-bolt"></i> The network uses 3 layers for prediction</li>
               </ul>
               <p>
-               The final result is 81% accurate! I have created a form so you can play around with the preditions yourself!
+               The final result is 81% accurate! I have created a form so you can play around with the predictions yourself!
               </p>
               <br>
             </div>
@@ -55,10 +55,19 @@
           <div class="container">
             <form method='POST'>
                 {% csrf_token %}
-                {{ form | linebreaks}}
+                {{ 'titanic_guess' | linebreaks}}
                 <button type = 'submit'>Submit</button>
               </form>
           </div>          
+        </div>
+      </div>
+      
+      <div class="row">
+          <table id="titanic_data_table" class="display" style="width:100%">
+            
+                {{ 'titanic_data_table' }}
+                
+          </table>          
         </div>
       </div>
     </section><!-- End About Section -->
