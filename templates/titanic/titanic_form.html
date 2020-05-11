@@ -55,21 +55,21 @@
           <div class="container">
             <form method='POST'>
                 {% csrf_token %}
-                {{ 'titanic_guess' | linebreaks}}
+                {{ 'form' | linebreaks}}
                 <button type = 'submit'>Submit</button>
-              </form>
+            </form>
           </div>          
         </div>
       </div>
       
-      <div class="row">
+      {% comment %} <div class="row">
           <table id="titanic_data_table" class="display" style="width:100%">
             
                 {{ 'titanic_data_table' }}
                 
           </table>          
         </div>
-      </div>
+      </div> {% endcomment %}
     </section><!-- End About Section -->
 
 
