@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <div class="container">
+
+    <form action="result/" method="post">
+      {% csrf_token %}
+      <input type="text" id="PassengerId" placeholder="PassengerId" name="PassengerId">
+      <input type="text" id="Pclass" placeholder="Pclass" name="Pclass">
+      <input type="text" id="Name" placeholder="Name" name="Name">
+      <input type="text" id="Sex" placeholder="Sex" name="Sex">
+      <input type="text" id="Age" placeholder="Age" name="Age">
+      <input type="text" id="Relatives" placeholder="Relatives" name="Relatives">
+      <input type="text" id="Ticket" placeholder="Ticket" name="Ticket">
+      <input type="text" id="Fare" placeholder="Fare" name="Fare">
+      <input type="text" id="Cabin" placeholder="Cabin" name="Cabin">
+      <input type="text" id="Embarked" placeholder="Embarked" name="Embarked">
+      <!-- ['PassengerId', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked'] -->
+      <input type="submit" value="Submit">
+    </form>
+
+  </div>
+
+</body>
+
+</html>

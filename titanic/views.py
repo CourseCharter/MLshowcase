@@ -78,7 +78,7 @@ def survived(unit):
 		#newdf=pd.DataFrame(y_pred, columns=['Survived'])
 		#newdf=newdf.replace({1:'Survived', 0:'Perished'})
 		
-		return (str(y_pred))	
+		return y_pred	
 	except ValueError as e:
 		return Response(e.args[0], status.HTTP_400_BAD_REQUEST)
 
