@@ -51,25 +51,40 @@
           </div>
         </div>
        
-       <div class="row">
-          <div class="container">
-            <form method='POST'>
-                {% csrf_token %}
-                {{ 'form' | linebreaks}}
-                <button type = 'submit'>Submit</button>
-            </form>
-          </div>          
-        </div>
+        <form action="result/" method="post">
+          <div class="form-group">
+              <label for="sex">Gender</label>
+              <select class="form-control" id="sex">
+                <option value=1>Male</option>
+                <option value=0>Female</option>
+              </select>
+            </div>
+          <div class="form-group">
+              <label for="pclass">Passenger Class</label>
+              <select class="form-control" id="pclass">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </div>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number"id="age">
+          </div>
+          <div class="form-group">
+            <label for="relatives">Realtives on Board</label>
+            <input type="number"id="relatives">
+          </div>
+          <div class="form-group">
+            <label for="fare">Fare</label>
+            <input type="number"id="fare">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      
       </div>
       
-      {% comment %} <div class="row">
-          <table id="titanic_data_table" class="display" style="width:100%">
-            
-                {{ 'titanic_data_table' }}
-                
-          </table>          
-        </div>
-      </div> {% endcomment %}
     </section><!-- End About Section -->
 
 

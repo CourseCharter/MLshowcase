@@ -21,8 +21,8 @@ from sklearn.preprocessing import StandardScaler
 from joblib import load as jload
 
 # Create your views here.
-# def NewTitanicForm(request):
-#        return render(request,'titanic/titanic_form.html')
+def Titanic_Home(request):
+       return render(request,'titanic/titanic_home.html')
 
 class NewTitanicForm(TemplateView):
 	template_name = 'titanic/titanic_form.html'

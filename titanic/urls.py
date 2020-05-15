@@ -5,9 +5,10 @@ from rest_framework import routers
 router = routers.DefaultRouter()
 router.register('titanic', views.Titanic_Guess_View)
 
+app_name='titanic'
 urlpatterns = [
     path('',views.NewTitanicForm.as_view(),name='titanic'),
     path('api/', include(router.urls)),
-    path('status/', views.Titanic_Guess_View),
-    path('test/', views.titanic_page_guess, name='testform'),
+    path('home/', views.Titanic_Home,name='titanic_home'),
+    #path('result/', views.result, name='result'),
 ]

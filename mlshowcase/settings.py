@@ -126,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    #STATIC_ROOT,
+    "C:/Users/user/projects/mlshowcase/static/",
 ]
 
 LOGIN_REDIRECT_URL = '/'

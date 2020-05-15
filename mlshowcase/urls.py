@@ -19,9 +19,9 @@ from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path('', views.HomePage.as_view(), name='home'),
+    path('', views.HomePage.as_view(), name='index'),
     path('admin/', admin.site.urls),
-    path('titanic/',include('titanic.urls')),
+    path('titanic/',include('titanic.urls', namespace='titanic')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

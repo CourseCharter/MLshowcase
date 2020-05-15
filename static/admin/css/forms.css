@@ -18,6 +18,11 @@
     vertical-align: 0;
 }
 
+.form-group label input[type="number"] {
+    margin-top: 0;
+    display: block;
+}
+
 form .form-row p {
     padding-left: 0;
 }
@@ -32,6 +37,7 @@ label {
     font-weight: normal;
     color: #666;
     font-size: 13px;
+    
 }
 
 .required label, label.required {
