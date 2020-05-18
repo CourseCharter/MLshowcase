@@ -138,6 +138,12 @@
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
+<script>
+  $(document).ready(function(){
+    {% block jquery %}{% endblock %}
+  })
+</script>
+
 <script src="{% static 'admin-lte/plugins/jquery/jquery.min.js' %}"></script>
 <!-- Bootstrap 4 -->
 <script src="{% static 'admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>

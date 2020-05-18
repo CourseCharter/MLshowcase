@@ -74,5 +74,24 @@ from sklearn.externals import joblib
 filename= 'titanic_model.pkl'
 joblib.dump(model, filename)
 
+joblib.dump(sc, 'scalars.pkl')
 
+
+
+context = {
+					'sex': 0,
+					'pclass': 1,
+					'age': 9,
+					'relatives': 2,
+					'fare': 100,
+		}
+				#create Dataframe
+context=pd.DataFrame(context, index=[0])
+
+guess = sc.transform(context)
+mdl = joblib.load('titanic_model.pkl')
+new_pred=mdl.predict_classes(guess)
+new_pred=pd.DataFrame(new_pred, columns=['Survived'])
+new_pred=new_pred.replace({1:'Lived', 0:'Perished'})
+print(new_pred)
 
