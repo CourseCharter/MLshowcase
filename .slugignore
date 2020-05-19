@@ -1,4 +1,10 @@
-# Heres a comment
+# cat .slugignore
 *.psd
 *.pdf
 *.csv
+*.pyc
+/test
+/spec
+/docs
+/lfs
+/objects
