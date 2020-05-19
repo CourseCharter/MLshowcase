@@ -45,7 +45,6 @@ et-xmlfile==1.0.1
 fastcache==1.1.0
 filelock==3.0.12
 flake8==3.7.9
-Flask==1.1.1
 fsspec==0.6.2
 future==0.18.2
 gevent==1.4.0
@@ -73,10 +72,6 @@ joblib==0.14.1
 json5==0.9.1
 jsonschema==3.2.0
 jupyter==1.0.0
-jupyter-client==5.3.4
-jupyter-console==6.1.0
-jupyter-core==4.6.1
-jupyterlab==1.2.6
 jupyterlab-server==1.0.6
 keyring==21.1.0
 kiwisolver==1.1.0
