@@ -6,7 +6,7 @@ Django==3.0.3
 djangorestframework==3.9.3
 django-crispy-forms==1.9.1
 dj_database_url==0.5.0
-django-adminlte-3==3.0.4
+django-adminlte-3==0.1.6
 html5lib==1.0.1
 joblib==0.14.1
 json5==0.9.1
