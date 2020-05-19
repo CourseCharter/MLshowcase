@@ -22,12 +22,12 @@ STATIC_ROOT = os.path.join(BASE_DIR,"static")
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '_23k^sem6ta$7vs^4hofb!*90yb9ssqa=p0vg6x=5j@_6-8yi1'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'wt-0+fkmb+m)^c=whm@ha8g^!8^mbo-3t#6*5pqea2w-+fdz!q')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["iansword.herokuapp.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'titanic',
     'rest_framework',
     'crispy_forms',
+    'skills',
 ]
 
 MIDDLEWARE = [
@@ -86,7 +87,9 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
