@@ -52,3 +52,4 @@ seaborn==0.10.0
 spyder==4.0.1
 spyder-kernels==1.8.1
 tables==3.6.1
+whitenoise==5.0.1
