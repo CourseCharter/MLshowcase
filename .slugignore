@@ -6,5 +6,5 @@
 /test
 /spec
 /docs
-/lfs
-/objects
+/lfs/*
+/objects/*
