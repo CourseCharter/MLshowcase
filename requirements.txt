@@ -10,6 +10,7 @@ conda-build==2.1.5
 Cython==0.29.15
 dask==2.11.0
 decorator==4.4.1
+Django==3.0.3
 fastcache==1.1.0
 filelock==3.0.12
 flake8==3.7.9
