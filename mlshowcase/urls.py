@@ -20,6 +20,8 @@ from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 
+admin.autodiscover()
+
 urlpatterns = [
     path('', views.HomePage.as_view(), name='index'),
     path('admin/', admin.site.urls),
