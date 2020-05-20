@@ -12,6 +12,7 @@ from . forms import TitanicForm
 from . models import titanic_guess
 from . serializers import titanic_guessSerializers
 from . import functions
+import os
 import pickle
 import json
 import numpy as np
@@ -45,19 +46,18 @@ def result(request):
 					'fare': fare,
 				}
 				#create Dataframe
-				print(context)
 				df=pd.DataFrame(context, index=[0])
 				#send df to model
-				#y_pred = functions.survived(df)
-				print(df)
-				mdl=load("/Users/user/projects/mlshowcase/titanic/titanic_model.pkl")
-				sc=load("/Users/user/projects/mlshowcase/titanic/scalars.pkl")
+				titanic_mdl_location = os.path.join('titanic', 'titanic_model.pkl')
+				titanic_sc_location = os.path.join('titanic', 'scalars.pkl')
+				mdl=load(titanic_mdl_location)
+				sc=load(titanic_sc_location)
+				# mdl=load("/Users/user/projects/mlshowcase/titanic/titanic_model.pkl")
+				# sc=load("/Users/user/projects/mlshowcase/titanic/scalars.pkl")
 				df=sc.transform(df)
-				print(df)
 				y_pred=mdl.predict_classes(df)
 				y_pred=pd.DataFrame(y_pred, columns=['Survived'])
 				y_pred=y_pred.replace({1:'Lived', 0:'Perished'})
-				print(y_pred)
 				form=TitanicForm()
 
 			return render(request, 'titanic/result.html', {'pred': y_pred.iloc[0]['Survived']})
