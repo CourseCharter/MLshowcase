@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE_DIR = os.path.join(BASE_DIR,"templates")
 STATIC_DIR = os.path.join(BASE_DIR,"static")
-STATIC_ROOT = os.path.join(PROJECT_ROOT,"staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR,"staticfiles")
 STATIC_URL = "/static/"
 
 # Quick-start development settings - unsuitable for production
@@ -151,3 +151,5 @@ REST_FRAMEWORK = {
 }
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+django_heroku.settings(locals())
