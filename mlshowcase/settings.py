@@ -29,7 +29,8 @@ STATIC_URL = "/static/"
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "wt-0+fkmb+m)^c=whm@ha8g^!8^mbo-3t#6*5pqea2w-+fdz!q")
 
 # SECURITY WARNING: don"t run with debug turned on in production!
-DEBUG = os.environ.get("DJANGO_DEBUG", "") != "False"
+#DEBUG = os.environ.get("DJANGO_DEBUG", "") != "False"
+DEBUG = False
 
 ALLOWED_HOSTS = ["iansword.herokuapp.com", "localhost", "127.0.0.1"]
 
