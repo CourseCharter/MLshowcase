@@ -34,6 +34,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     "iansword.herokuapp.com",
+    ".herokuapp.com",
     "localhost",
     "127.0.0.1",
     ]
