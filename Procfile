@@ -1,1 +1,1 @@
-web: gunicorn mlshowcase.wsgi
+web: gunicorn mlshowcase.wsgi --preload
