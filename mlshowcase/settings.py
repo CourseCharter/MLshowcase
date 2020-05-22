@@ -18,7 +18,7 @@ import django_heroku
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE_DIR = os.path.join(BASE_DIR,"templates")
-STATIC_DIR = os.path.join(BASE_DIR,"static")
+#STATIC_DIR = os.path.join(BASE_DIR,"static")
 STATIC_ROOT = os.path.join(BASE_DIR,"staticfiles")
 STATIC_URL = "/static/"
 
@@ -32,7 +32,11 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "wt-0+fkmb+m)^c=whm@ha8g^!8^mbo
 #DEBUG = os.environ.get("DJANGO_DEBUG", "") != "False"
 DEBUG = False
 
-ALLOWED_HOSTS = ["iansword.herokuapp.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = [
+    "iansword.herokuapp.com",
+    "localhost",
+    "127.0.0.1",
+    ]
 
 
 # Application definition
@@ -139,6 +143,7 @@ USE_TZ = True
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     os.path.join(PROJECT_ROOT, 'static'),
+    "whitenoise.storage.CompressedManifestStaticFilesStorage",
 ]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
@@ -153,4 +158,4 @@ REST_FRAMEWORK = {
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())

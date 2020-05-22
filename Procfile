@@ -1,1 +1,1 @@
-web: gunicorn mlshowcase.wsgi --log-file -
+web: gunicorn mlshowcase.wsgi
