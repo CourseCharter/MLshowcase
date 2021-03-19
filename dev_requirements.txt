@@ -30,7 +30,7 @@ Django==3.0.3
 django-adminlte3==0.1.6
 django-crispy-forms==1.9.0
 django-heroku==0.3.1
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 docutils==0.16
 entrypoints==0.3
 flake8==3.7.9

@@ -3,7 +3,7 @@ conda-build==2.1.5
 decorator==4.4.1
 django==3.0.3
 django-heroku
-djangorestframework==3.9.3
+djangorestframework==3.11.2
 django-crispy-forms==1.9.1
 dj_database_url
 django-adminlte-3==0.1.6
