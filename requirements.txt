@@ -1,7 +1,7 @@
 conda==4.3.16
 conda-build==2.1.5
 decorator==4.4.1
-django==3.0.3
+django==3.1.6
 django-heroku
 djangorestframework==3.9.3
 django-crispy-forms==1.9.1
