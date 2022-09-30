@@ -9,7 +9,7 @@ dj_database_url
 django-adminlte-3==0.1.6
 gunicorn
 html5lib==1.0.1
-joblib==0.14.1
+joblib==1.2.0
 json5==0.9.1
 jsonschema==3.2.0
 matplotlib==3.1.3
